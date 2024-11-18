@@ -1,0 +1,31 @@
+<!DOCTYPE html>  <!-- Declaração do tipo de documento, indicando que é um documento HTML5 -->
+<html lang="pt-br">  <!-- Define o idioma do conteúdo como português do Brasil -->
+<head>
+    <meta charset="UTF-8">  <!-- Define a codificação de caracteres como UTF-8 -->
+    <title>Meu Blog</title>  <!-- Título da página que aparece na aba do navegador -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway" rel="stylesheet">  <!-- Link para a fonte Raleway do Google Fonts -->
+    <link rel="stylesheet" href="../static/css/styles.css">  <!-- Link para o arquivo CSS para estilizar a página -->
+</head>
+<body>
+<div class="wrapper">  <!-- Container principal para envolver todo o conteúdo -->
+    <div class="top">  <!-- Seção superior da página -->
+        <div class="title"><h1>Meu Blog</h1></div>  <!-- Título principal do blog -->
+    </div>
+
+    <!-- Loop para iterar sobre todos os posts passados para o template -->
+    {% for post in all_posts: %}
+    <div class="content">  <!-- Seção principal que contém o conteúdo dos posts -->
+        <div class="card">  <!-- Container para cada post, estilizado como um cartão -->
+            <h2>{{ post.title }}</h2>  <!-- Exibe o título do post (substituído pelo conteúdo dinâmico do Flask) -->
+            <p>{{ post.subtitle }}</p>  <!-- Exibe o subtítulo do post (também dinâmico) -->
+            <a href="{{ url_for('show_post', index=post.id) }}">Ler</a>  <!-- Link para a página do post específico usando sua ID -->
+        </div>
+    </div>
+    {% endfor %}  <!-- Fim do loop sobre os posts -->
+
+</div>
+</body>
+<footer>
+    <p>Feito com ♥️ no Brasil.</p>  <!-- Mensagem de rodapé -->
+</footer>
+</html>
