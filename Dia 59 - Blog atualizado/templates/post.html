@@ -1,0 +1,32 @@
+{% include "header.html" %}  <!-- Inclui o cabeçalho do site -->
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('{{ post.image_url }}')">  <!-- Cabeçalho com imagem do post -->
+    <div class="container position-relative px-4 px-lg-5">  <!-- Contêiner com espaçamento -->
+        <div class="row gx-4 gx-lg-5 justify-content-center">  <!-- Linha centralizada -->
+            <div class="col-md-10 col-lg-8 col-xl-7">  <!-- Coluna responsiva -->
+                <div class="post-heading">  <!-- Cabeçalho do post -->
+                    <h1>{{ post.title }}</h1>  <!-- Título do post -->
+                    <h2 class="subheading">{{ post.subtitle }}</h2>  <!-- Subtítulo do post -->
+                    <span class="meta">Postado por:  <!-- Texto para metadados -->
+                        <a href="#">{{ post.author }}</a>  <!-- Autor do post como link -->
+                        on {{ post.date }}  <!-- Data de postagem -->
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content-->
+<article class="mb-4">  <!-- Início do artigo do post -->
+    <div class="container px-4 px-lg-5">  <!-- Contêiner para o conteúdo do post -->
+        <div class="row gx-4 gx-lg-5 justify-content-center">  <!-- Linha centralizada -->
+            <div class="col-md-10 col-lg-8 col-xl-7">  <!-- Coluna responsiva -->
+                <p>{{ post.body }}</p>  <!-- Corpo do post -->
+            </div>
+        </div>
+    </div>
+</article>
+
+{% include "footer.html" %}  <!-- Inclui o rodapé do site -->

@@ -1,0 +1,82 @@
+{% include "header.html" %}  <!-- Inclui o cabeçalho da página -->
+
+<!-- Cabeçalho da Página-->
+<header class="masthead" style="background-image: url('../static/assets/img/contact-bg.jpg')">  <!-- Define a imagem de fundo para o cabeçalho -->
+    <div class="container position-relative px-4 px-lg-5">  <!-- Cria um contêiner para o conteúdo -->
+        <div class="row gx-4 gx-lg-5 justify-content-center">  <!-- Cria uma linha centralizada -->
+            <div class="col-md-10 col-lg-8 col-xl-7">  <!-- Define a largura da coluna em diferentes tamanhos de tela -->
+                <div class="page-heading">
+                    <h1>Contato</h1>  <!-- Título da seção -->
+                    <span class="subheading">Tem perguntas? Eu tenho respostas.</span>  <!-- Subtítulo -->
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Conteúdo Principal-->
+<main class="mb-4">  <!-- Define o conteúdo principal da página -->
+    <div class="container px-4 px-lg-5">  <!-- Cria um contêiner para o conteúdo -->
+        <div class="row gx-4 gx-lg-5 justify-content-center">  <!-- Cria uma linha centralizada -->
+            <div class="col-md-10 col-lg-8 col-xl-7">  <!-- Define a largura da coluna em diferentes tamanhos de tela -->
+                <p>Quer entrar em contato? Preencha o formulário abaixo para me enviar uma mensagem e eu retornarei o mais rápido possível!</p>
+                <div class="my-5">
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- * * Formulário de Contato SB Forms * *-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- Este formulário é pré-integrado com SB Forms.-->
+                    <!-- Para tornar este formulário funcional, cadastre-se em-->
+                    <!-- https://startbootstrap.com/solution/contact-forms-->
+                    <!-- para obter um token de API! -->
+                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <div class="form-floating">
+                            <input class="form-control" id="name" type="text" placeholder="Digite seu nome..." data-sb-validations="required" />
+                            <label for="name">Nome</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">Um nome é obrigatório.</div>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" id="email" type="email" placeholder="Digite seu e-mail..." data-sb-validations="required,email" />
+                            <label for="email">Endereço de e-mail</label>
+                            <div class="invalid-feedback" data-sb-feedback="email:required">Um e-mail é obrigatório.</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">O e-mail não é válido.</div>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" id="phone" type="tel" placeholder="Digite seu número de telefone..." data-sb-validations="required" />
+                            <label for="phone">Número de Telefone</label>
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">Um número de telefone é obrigatório.</div>
+                        </div>
+                        <div class="form-floating">
+                            <textarea class="form-control" id="message" placeholder="Digite sua mensagem aqui..." style="height: 12rem" data-sb-validations="required"></textarea>
+                            <label for="message">Mensagem</label>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">Uma mensagem é obrigatória.</div>
+                        </div>
+                        <br />
+                        <!-- Mensagem de sucesso no envio-->
+                        <!---->
+                        <!-- Esta é a mensagem que seus usuários verão quando o formulário-->
+                        <!-- for enviado com sucesso-->
+                        <div class="d-none" id="submitSuccessMessage">
+                            <div class="text-center mb-3">
+                                <div class="fw-bolder">Envio do formulário bem-sucedido!</div>
+                                Para ativar este formulário, cadastre-se em
+                                <br />
+                                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                            </div>
+                        </div>
+                        <!-- Mensagem de erro no envio-->
+                        <!---->
+                        <!-- Esta é a mensagem que seus usuários verão quando houver-->
+                        <!-- um erro ao enviar o formulário-->
+                        <div class="d-none" id="submitErrorMessage">
+                            <div class="text-center text-danger mb-3">Erro ao enviar a mensagem!</div>
+                        </div>
+                        <!-- Botão de Enviar-->
+                        <button class="btn btn-primary text-uppercase disabled" id="submitButton" type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% include "footer.html" %}  <!-- Inclui o rodapé da página -->
