@@ -1,0 +1,32 @@
+{% include "header.html" %}  <!-- Inclui o cabeçalho do site -->
+
+<!-- Cabeçalho da Página-->
+<header class="masthead" style="background-image: url('{{ post.image_url }}')">  <!-- Define a imagem de fundo do cabeçalho com a URL da imagem do post -->
+    <div class="container position-relative px-4 px-lg-5">  <!-- Cria um contêiner com posicionamento relativo -->
+        <div class="row gx-4 gx-lg-5 justify-content-center">  <!-- Cria uma linha com espaçamento e centraliza o conteúdo -->
+            <div class="col-md-10 col-lg-8 col-xl-7">  <!-- Define as colunas responsivas -->
+                <div class="post-heading">  <!-- Div para o cabeçalho do post -->
+                    <h1>{{ post.title }}</h1>  <!-- Exibe o título do post -->
+                    <h2 class="subheading">{{ post.subtitle }}</h2>  <!-- Exibe o subtítulo do post -->
+                    <span class="meta">Publicado por  <!-- Meta informações sobre o autor e a data -->
+                        <a href="#">{{ post.author }}</a>  <!-- Link para o autor do post -->
+                        em {{ post.date }}  <!-- Exibe a data de publicação -->
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Conteúdo do Post-->
+<article class="mb-4">  <!-- Início do artigo com margem inferior -->
+    <div class="container px-4 px-lg-5">  <!-- Cria um contêiner para o conteúdo do post -->
+        <div class="row gx-4 gx-lg-5 justify-content-center">  <!-- Cria uma linha com espaçamento e centraliza o conteúdo -->
+            <div class="col-md-10 col-lg-8 col-xl-7">  <!-- Define as colunas responsivas -->
+                <p>{{ post.body }}</p>  <!-- Exibe o corpo do post -->
+            </div>
+        </div>
+    </div>
+</article>
+
+{% include "footer.html" %}  <!-- Inclui o rodapé do site -->
