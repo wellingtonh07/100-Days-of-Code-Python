@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">  <!-- Define o idioma do documento como português do Brasil -->
+<head>
+    <meta charset="UTF-8">  <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+    <!-- Configura a visualização em dispositivos móveis -->
+
+    {% block styles %}  <!-- Início de um bloco que pode ser sobrescrito em templates que herdam deste -->
+        <!-- Bootstrap CSS -->
+        {{ bootstrap.load_css() }}  <!-- Carrega o CSS do Bootstrap, facilitando o uso de estilos pré-definidos -->
+    {% endblock %}
+
+    <title>{% block title %}{% endblock %}</title>  <!-- Título da página, que pode ser sobrescrito -->
+</head>
+<body>
+    {% block content %}{% endblock %}  <!-- Bloco de conteúdo principal, que pode ser sobrescrito -->
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends "base.html" %}  <!-- Indica que este template herda de base.html -->
+
+{% block title %}Segredos{% endblock %}  <!-- Define o título da página como "Segredos" -->
+
+{% block content %}  <!-- Início do bloco de conteúdo que será preenchido nesta página -->
+<!-- Usando classes do Bootstrap para estilização -->
+<div class="jumbotron">  <!-- Jumbotron é uma classe do Bootstrap que destaca uma seção -->
+	<div class="container">  <!-- Div com a classe "container" para centralizar o conteúdo -->
+		<h1>Bem-vindo</h1>  <!-- Cabeçalho principal da seção -->
+		<p>Está pronto para descobrir meu segredo?</p>  <!-- Texto de introdução -->
+		<a class="btn btn-primary btn-lg" href="{{ url_for('login') }}">Login</a>
+		<!-- Botão estilizado com classes do Bootstrap que redireciona para a rota de login -->
+	</div>
+</div>
+{% endblock %}  <!-- Fim do bloco de conteúdo -->
