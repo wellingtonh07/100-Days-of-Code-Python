@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Minha Biblioteca</title>
+    <link rel="stylesheet" href="static/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Minha Biblioteca</h1>
+
+      {% if livros == [] %}
+      <p>A biblioteca está vazia.</p>
+      {% endif %}
+      <ul class="list-group">
+        {% for livro in livros %}
+        <li class="list-group-item">
+          <a href="{{ url_for('deletar', id=livro.id) }}" class="btn btn-danger btn-sm">Deletar</a>
+          {{ livro.titulo }} - {{ livro.autor }} - {{ livro.avaliacao }}/10
+          <a href="{{ url_for('editar', id=livro.id) }}" class="btn btn-warning btn-sm">Editar Avaliação</a>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <a href="{{ url_for('adicionar') }}" class="add-button">Adicionar Novo Livro</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Editar Avaliação</title>
+    <link rel="stylesheet" href="static/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Editar Avaliação</h1>
+      <form action="{{ url_for('editar') }}" method="POST">
+        <div class="form-group">
+          <p><strong>Nome do Livro:</strong> {{ livro.titulo }}</p>
+          <p><strong>Avaliação Atual:</strong> {{ livro.avaliacao }}</p>
+        </div>
+        <input hidden="hidden" name="id" value="{{ livro.id }}" />
+        <div class="form-group">
+          <label for="avaliacao">Nova Avaliação</label>
+          <input name="avaliacao" id="avaliacao" type="text" placeholder="Nova Avaliação" required />
+        </div>
+        <button type="submit">Alterar Avaliação</button>
+      </form>
+    </div>
+  </body>
+</html>
