@@ -1,0 +1,24 @@
+{% extends 'base.html' %}  <!-- Indica que este template herda de base.html -->
+
+{% block title %}Cafés e Wifi{% endblock %}  <!-- Define o título da página como "Cafés e Wifi" -->
+
+{% block content %}  <!-- Início do bloco de conteúdo que será preenchido nesta página -->
+<div class="jumbotron text-center">  <!-- Cria um componente "jumbotron" do Bootstrap, centralizando o texto -->
+  <div class="container">  <!-- Cria uma div com a classe "container" do Bootstrap para centralizar o conteúdo -->
+    <h1 class="display-4">☕️ Café & Wifi 💻</h1>  <!-- Cabeçalho principal com ícones de café e computador -->
+    <p class="lead">Quer trabalhar em um café, mas precisa de energia e wifi?</p>  <!-- Texto introdutório que se destaca -->
+    <hr class="my-4" />  <!-- Linha horizontal para separação -->
+    <p>
+      Você encontrou o lugar certo! Confira minha coleção de cafés com dados sobre
+      disponibilidade de tomadas, velocidade do wifi e qualidade do café.
+    </p>  <!-- Parágrafo explicando o que o usuário encontrará -->
+    <a
+      class="btn btn-warning btn-lg"
+      href="{{ url_for('cafes') }}"
+      role="button"
+      >Mostre-me!</a  <!-- Botão que leva à lista de cafés -->
+    >
+  </div>
+</div>
+
+{% endblock %}  <!-- Fim do bloco de conteúdo -->

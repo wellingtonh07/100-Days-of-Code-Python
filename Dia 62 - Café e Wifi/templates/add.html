@@ -1,0 +1,22 @@
+{% extends 'base.html' %}  <!-- Indica que este template herda de base.html -->
+
+{% from 'bootstrap5/form.html' import render_form %}  <!-- Importa a função render_form do template de formulários do Bootstrap -->
+
+{% block title %}Adicionar um Novo Café{% endblock %}  <!-- Define o título da página como "Adicionar um Novo Café" -->
+
+{% block content %}  <!-- Início do bloco de conteúdo que será preenchido nesta página -->
+<div class="container">  <!-- Cria uma div com a classe "container" do Bootstrap para centralizar o conteúdo -->
+  <div class="row">  <!-- Cria uma linha para a disposição do conteúdo -->
+    <div class="col-sm-12 col-md-8">  <!-- Coluna que ocupa 12 colunas em telas pequenas e 8 colunas em telas médias -->
+      <h1>Adicionar um novo café ao banco de dados</h1>  <!-- Cabeçalho principal informando o que a página faz -->
+
+      {{ render_form(form, novalidate=True) }}  <!-- Renderiza o formulário usando a função importada, com a opção novalidate para evitar validações HTML nativas -->
+
+      <p class="space-above">  <!-- Parágrafo com uma classe para espaçamento acima -->
+        <a href="{{ url_for('cafes') }}">Ver todos os cafés</a>  <!-- Link para ver todos os cafés -->
+      </p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}  <!-- Fim do bloco de conteúdo -->

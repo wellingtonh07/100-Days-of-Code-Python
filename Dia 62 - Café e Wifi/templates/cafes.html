@@ -1,0 +1,29 @@
+{% extends 'base.html' %}  <!-- Indica que este template herda de base.html -->
+
+{% block title %}Todos os Cafés{% endblock %}  <!-- Define o título da página como "Todos os Cafés" -->
+
+{% block content %}  <!-- Início do bloco de conteúdo que será preenchido nesta página -->
+<div class="container">  <!-- Cria uma div com a classe "container" do Bootstrap para centralizar o conteúdo -->
+  <div class="row">  <!-- Cria uma linha para a disposição do conteúdo -->
+    <div class="col-sm-12">  <!-- Coluna que ocupa todas as 12 colunas disponíveis em telas pequenas e maiores -->
+      <h1>Todos os Cafés</h1>  <!-- Cabeçalho principal informando que a página lista todos os cafés -->
+
+      <table class="table" style="color: white">  <!-- Cria uma tabela com a classe "table" do Bootstrap, definindo a cor do texto como branca -->
+        {% for row in cafes %}  <!-- Inicia um loop para cada linha de dados de cafés -->
+        <tr>  <!-- Cria uma nova linha na tabela -->
+          {% for item in row %}  <!-- Inicia um loop para cada item na linha atual -->
+            {% if item[0:4] == "http" %}  <!-- Verifica se o item é um link (começa com "http") -->
+              <td><a href="{{ item }}">Link do Mapa</a></td>  <!-- Se for um link, cria uma célula com um link para o Google Maps -->
+            {% else %}  <!-- Se não for um link -->
+              <td>{{ item }}</td>  <!-- Exibe o item na tabela -->
+            {% endif %}  <!-- Fim da condição -->
+          {% endfor %}  <!-- Fim do loop de itens -->
+        </tr>  <!-- Fim da linha da tabela -->
+        {% endfor %}  <!-- Fim do loop de linhas -->
+      </table>  <!-- Fim da tabela -->
+      <p><a href="{{ url_for('home') }}">Retornar à página inicial</a></p>  <!-- Link para retornar à página inicial -->
+    </div>
+  </div>
+</div>
+
+{% endblock %}  <!-- Fim do bloco de conteúdo -->

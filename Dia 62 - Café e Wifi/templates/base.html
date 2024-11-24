@@ -1,0 +1,25 @@
+<!DOCTYPE html>  <!-- Declara que este é um documento HTML5 -->
+<html lang="pt-br">  <!-- Define o idioma da página como português do Brasil -->
+  <head>
+    <meta charset="UTF-8" />  <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />  <!-- Configura a viewport para garantir que a página seja responsiva em diferentes dispositivos -->
+
+    {% block styles %}  <!-- Início do bloco onde os estilos podem ser definidos -->
+    <!-- Carrega o CSS do Bootstrap-Flask aqui -->
+    {{ bootstrap.load_css() }}  <!-- Carrega o CSS do Bootstrap através da extensão Bootstrap-Flask -->
+    <!-- Link para o styles.css aqui para aplicar estilos a todos os templates filhos -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />  <!-- Adiciona um link para o arquivo CSS personalizado localizado na pasta estática -->
+    {% endblock %}  <!-- Fim do bloco de estilos -->
+
+    <title>{% block title %}{% endblock %}</title>  <!-- Define o título da página, que pode ser substituído em templates filhos -->
+  </head>
+  <body>
+    {% block content %}{% endblock %}  <!-- Bloco onde o conteúdo específico de cada página será inserido -->
+  </body>
+</html>
